@@ -4,7 +4,9 @@
   <br />
   <input type="text" v-model="keyword" @keyup="getIndustry2" />
   <ul>
-    <li v-for="(item,index) in list" :key="index">{{item.q}}</li>
+    <li v-for="(item,index) in list" :key="index">
+      <router-link :to="`/searchitem?value=${encodeURIComponent(item.q)}`">{{item.q}}</router-link>
+    </li>
   </ul>
 </template>
 
